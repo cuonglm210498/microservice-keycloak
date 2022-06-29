@@ -2,7 +2,7 @@ package com.lecuong.userservice.repository.specification;
 
 import com.lecuong.userservice.entity.User;
 import com.lecuong.userservice.modal.request.user.UserFilterRequest;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 
 public class UserSpecification {

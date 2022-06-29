@@ -8,19 +8,23 @@ spring:
     gateway:
       routes:
         - id: USER-SERVICE
-          uri: lb://USER-SERVICE
+#          uri: lb://USER-SERVICE
+          uri: http://localhost:8081/
           predicates:
             - Path=/api/v1/users/**
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/auth/realms/VSS
 
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8888/eureka/
-  instance.hostname: localhost
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8888/eureka/
+#  instance.hostname: localhost
