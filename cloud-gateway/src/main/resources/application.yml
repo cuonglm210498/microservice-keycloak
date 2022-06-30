@@ -6,17 +6,31 @@ spring:
     name: API-GATEWAY
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay
       routes:
         - id: USER-SERVICE
-#          uri: lb://USER-SERVICE
-          uri: http://localhost:8081/
+          uri: http://localhost:8081
           predicates:
             - Path=/api/v1/users/**
+        - id: DEPARTMENT-SERVICE
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/departments/**
   main:
     web-application-type: reactive
     allow-bean-definition-overriding: true
   security:
     oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/VSS
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: CRM-backend-test
+            client-secret: a8f58d54-bcc6-4105-b8bc-4c07df2a380d
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/auth/realms/VSS

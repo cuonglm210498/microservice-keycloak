@@ -17,11 +17,11 @@ spring:
   application:
     name: USER-SERVICE
   #keycloak
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/auth/realms/VSS
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8080/auth/realms/VSS
 
 #eureka:
 #  client:

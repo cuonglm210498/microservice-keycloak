@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-gateway" />
         <module name="registry-server" />
         <module name="user-service" />
+        <module name="department-service" />
+        <module name="cloud-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-service" options="-parameters" />
       <module name="cloud-gateway" options="-parameters" />
+      <module name="department-service" options="-parameters" />
       <module name="registry-server" options="-parameters" />
       <module name="registry-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
